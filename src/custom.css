@@ -1,5 +1,4 @@
 /* Tailwind custom variables */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Poppins:wght@300;400;500&display=swap");
 
 :root {
   --color-primary: #4d4d4d;
@@ -11,10 +10,56 @@
   --color-gray: #a9a9a9;
   --color-light-accent: #bfabab;
   --color-light-gray: #d9d9d9;
+  --color-background-light: #f6f6f5;
 
-  --font-lato-light: "Lato", sans-serif;
-  --font-lato-regular: "Lato", sans-serif;
-  --font-poppins-light: "Poppins", sans-serif;
-  --font-poppins-regular: "Poppins", sans-serif;
-  --font-poppins-medium: "Poppins", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-lato: "Lato", sans-serif;
+}
+
+/* Font sizes */
+.text-10px {
+  font-size: 10px;
+}
+.text-11px {
+  font-size: 11px;
+}
+.text-14px {
+  font-size: 14px;
+}
+.text-16px {
+  font-size: 16px;
+}
+.text-18px {
+  font-size: 18px;
+}
+.text-20px {
+  font-size: 20px;
+}
+.text-28px {
+  font-size: 28px;
+}
+
+/* Text colors */
+.text-gray {
+  color: var(--color-gray);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+button {
+  font-family: var(--font-lato-regular), serif;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -1,9 +1,545 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Act+Acre</title>
+    <link rel="icon" type="image/svg+xml" href="public/favicon.ico" />
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="stylesheet" href="src/custom.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <header
+      class="bg-background flex justify-between items-center p-4 px-6 md:px-12 relative"
+    >
+      <!-- Hamburger + Search mobile -->
+      <div class="flex items-center gap-4 sm:hidden">
+        <button id="menu-btn" class="text-2xl text-text focus:outline-none">
+          <img src="/public/icons/menu.svg" alt="Menu" class="w-6 h-6" />
+        </button>
+        <a href="#" aria-label="Search" class="text-2xl text-text">
+          <img src="public/icons/search.svg" alt="Search" class="w-6 h-6" />
+        </a>
+      </div>
+
+      <!-- Logo -->
+      <div class="hidden sm:flex flex-col">
+        <a
+          href="index.html"
+          class="text-text text-center no-underline flex flex-col items-center justify-center leading-none"
+        >
+          <img
+            src="public/images/logo.svg"
+            alt="Logo"
+            class="w-[62px] h-[49px]"
+          />
+        </a>
+      </div>
+      <a
+        href="index.html"
+        class="flex sm:hidden flex-col items-center justify-center text-text text-center no-underline flex-1 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 leading-none w-[62px] h-[49px]"
+      >
+        <img
+          src="public/images/logo-mobile.svg"
+          alt="Logo"
+          class="w-[62px] h-[49px]"
+        />
+      </a>
+
+      <!-- Desktop nav -->
+      <nav
+        class="gap-4 text-text text-sm hidden sm:flex flex-1 justify-center items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
+        <a href="src/pages/shop/shop.html" class="hover:underline font-poppins"
+          >Shop</a
+        >
+        <a
+          href="src/pages/science/science.html"
+          class="hover:underline font-poppins"
+          >Science</a
+        >
+        <a
+          href="src/pages/press/press.html"
+          class="hover:underline font-poppins"
+          >Press</a
+        >
+        <a href="src/pages/blog/blog.html" class="hover:underline font-poppins"
+          >Blog</a
+        >
+        <a
+          href="src/pages/tutorial/tutorial.html"
+          class="hover:underline font-poppins"
+          >Tutorial</a
+        >
+      </nav>
+
+      <!-- Right icons desktop -->
+      <div
+        class="gap-4 text-text items-center flex-1 justify-end hidden sm:flex"
+      >
+        <a href="#" aria-label="Search">
+          <img
+            src="public/icons/search.svg"
+            alt="Search-icon"
+            class="w-6 h-6 inline-block align-middle"
+          />
+        </a>
+        <a href="src/pages/user/user.html" aria-label="User">
+          <img
+            src="public/icons/user.svg"
+            alt="User-icon"
+            class="w-6 h-6 inline-block align-middle"
+          />
+        </a>
+        <a href="src/pages/cart/cart.html" aria-label="Cart">
+          <img
+            src="public/icons/cart.svg"
+            alt="Cart-icon"
+            class="w-6 h-6 inline-block align-middle"
+          />
+        </a>
+      </div>
+
+      <!-- Right icons mobile -->
+      <div
+        class="flex items-center gap-4 sm:hidden absolute right-4 top-1/2 -translate-y-1/2"
+      >
+        <a
+          href="src/pages/user/user.html"
+          aria-label="User"
+          class="text-2xl text-text"
+        >
+          <img src="public/icons/user.svg" alt="User" class="w-6 h-6" />
+        </a>
+        <a
+          href="src/pages/cart/cart.html"
+          aria-label="Cart-mobile"
+          class="text-2xl text-text relative"
+        >
+          <img src="public/icons/cart.svg" alt="Cart-icon" class="w-6 h-6" />
+        </a>
+      </div>
+
+      <!-- Mobile nav -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-black bg-opacity-60 z-50 flex flex-col items-center justify-center space-y-8 text-2xl text-white hidden px-6 overflow-hidden"
+      >
+        <button id="close-menu" class="absolute top-6 right-6 text-3xl">
+          <i class="fas fa-times"></i>
+        </button>
+        <a href="src/pages/shop/shop.html" class="hover:underline">Shop</a>
+        <a href="src/pages/science/science.html" class="hover:underline"
+          >Science</a
+        >
+        <a href="src/pages/press/press.html" class="hover:underline">Press</a>
+        <a href="src/pages/blog/blog.html" class="hover:underline">Blog</a>
+        <a href="src/pages/tutorial/tutorial.html" class="hover:underline"
+          >Tutorial</a
+        >
+      </div>
+    </header>
+
+    <section
+      class="flex flex-col md:flex-row md:pr-6 bg-[var(--color-background-light)] md:bg-transparent"
+    >
+      <!-- Breadcrumbs mobile -->
+      <p
+        class="uppercase text-sm md:my-4 md:hidden bg-[var(--color-background-light)] py-2 px-6 flex items-center"
+      >
+        <img
+          src="public/icons/arrow.svg"
+          alt="Menu"
+          class="mr-2 inline-block w-4 h-4"
+        />
+        <span class="font-poppins font-light text-10px text-gray">
+          ALL PRODUCTS / HAIRCARE /&nbsp;
+        </span>
+        <span class="font-poppins font-normal text-10px">
+          RESTORATIVE HAIR MASK</span
+        >
+      </p>
+      <!-- Image -->
+      <div
+        class="w-full md:w-3/5 aspect-square md:aspect-auto h-auto bg-var[--light-gray]"
+      >
+        <img
+          src="public/images/product-1.svg"
+          alt="restorative hair mask"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <!-- Details -->
+      <div class="w-full md:w-2/5 flex flex-col gap-6 p-6 text-text">
+        <!-- Breadcrumbs desktop -->
+        <p class="uppercase font-poppins font-light text-11px hidden md:block">
+          all products / skincare / restorative hair mask
+        </p>
+        <h2 class="font-poppins font-normal text-28px uppercase">
+          Restorative hair mask
+        </h2>
+        <p class="font-poppins font-light text-14px uppercase">
+          Nourishment in a bottle
+        </p>
+        <hr class="border-t-2 border-[var(--color-secondary)] my-4" />
+        <div>
+          <p class="font-poppins font-light text-14px">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor
+            commodo ullamcorper a lacus vestibulum. Luctus accumsan tortor
+            posuere ac ut.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-2 gap-4 mb-2 w-full sm:gap-4 gap-x-20 gap-y-10"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="w-10 h-10 rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center"
+            >
+              <img
+                src="public/icons/organic.svg"
+                alt="Organic icon"
+                class="w-[51.94px] h-[51.94px]"
+              />
+            </div>
+            <span
+              class="text-xs font-poppins font-medium uppercase text-14px text-accent"
+              >100% ORGANIC</span
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <div
+              class="w-10 h-10 rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center"
+            >
+              <img
+                src="public/icons/organic.svg"
+                alt="Organic icon"
+                class="w-[51.94px] h-[51.94px]"
+              />
+            </div>
+            <span
+              class="text-xs font-poppins font-medium uppercase text-14px text-accent"
+              >100% ORGANIC</span
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <div
+              class="w-10 h-10 rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center"
+            >
+              <img
+                src="public/icons/organic.svg"
+                alt="Organic icon"
+                class="w-[51.94px] h-[51.94px]"
+              />
+            </div>
+            <span
+              class="text-xs font-poppins font-medium uppercase text-14px text-accent"
+              >100% ORGANIC</span
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <div
+              class="w-10 h-10 rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center"
+            >
+              <img
+                src="public/icons/organic.svg"
+                alt="Organic icon"
+                class="w-[51.94px] h-[51.94px]"
+              />
+            </div>
+            <span
+              class="text-xs font-poppins font-medium uppercase text-14px text-accent"
+              >100% ORGANIC</span
+            >
+          </div>
+        </div>
+        <hr class="border-t-2 border-[var(--color-secondary)] my-4" />
+        <div class="flex flex-col space-y-4">
+          <label class="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="choice"
+              value="option1"
+              required
+              class="w-5 h-5 peer"
+              checked
+            />
+            <span
+              class="font-poppins font-light text-16px opacity-50 peer-checked:opacity-100"
+            >
+              Buy Once | $38
+            </span>
+          </label>
+
+          <label class="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="choice"
+              value="option2"
+              class="w-5 h-5 peer"
+            />
+            <span
+              class="font-poppins font-light text-16px opacity-50 peer-checked:opacity-100"
+            >
+              Subscribe (SAVE 20%) |
+              <span class="text-red-600 sm:text-inherit">$30</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="flex items-center gap-6 justify-between">
+          <div
+            class="flex justify-between items-center border border-black py-2 bg-white basis-1/3 min-w-0"
+          >
+            <button
+              id="decrease"
+              class="text-xl px-2 py-1 font-bold text-black hover:text-bold"
+            >
+              -
+            </button>
+            <span
+              id="count"
+              class="mx-2 w-8 text-center text-lg font-medium block"
+              >1</span
+            >
+            <button
+              id="increase"
+              class="text-xl px-2 py-1 font-bold text-black hover:text-bold"
+            >
+              +
+            </button>
+          </div>
+          <button
+            type="button"
+            id="cart-animated-btn"
+            class="group relative bg-[var(--color-light-accent)] px-6 py-4 w-fit uppercase basis-2/3 overflow-hidden transition-all duration-200 focus:outline-none hover:scale-106 hover:bg-[#575757] font-lato text-[16px] font-normal text-[var(--color-primary)]"
+          >
+            <span
+              id="cart-btn-text"
+              class="transition-opacity duration-200 font-lato text-[16px] font-normal group-hover:text-white"
+            >
+              Add to cart
+            </span>
+            <i
+              id="cart-btn-cart"
+              class="fas fa-shopping-cart absolute left-0 top-1/2 -translate-y-1/2 text-xl text-white opacity-0"
+            ></i>
+            <i
+              id="cart-btn-check"
+              class="fas fa-check absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xl text-white opacity-0"
+            ></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full md:w-1/2 mt-12 md:mr-0 px-6 md:px-20">
+      <details
+        class="bg-background text-text py-4 border-b border-gray-300 animated-accordion"
+      >
+        <summary
+          class="cursor-pointer flex justify-between items-center text-20px font-poppins font-light animated-accordion-toggle text-[var(--color-primary)]"
+        >
+          Ingredients
+          <img
+            src="public/icons/+.svg"
+            alt="Plus icon"
+            class="animated-accordion-icon w-5 h-5"
+          />
+        </summary>
+        <div
+          class="animated-accordion-content max-h-0 overflow-hidden transition-all duration-500"
+        >
+          <p
+            class="mt-2 text-[14px] font-poppins font-light text-[var(--color-primary)]"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor
+            commodo ullamcorper a lacus vestibulum. Luctus accumsan tortor
+            posuere ac ut.
+          </p>
+        </div>
+      </details>
+      <details
+        class="bg-background text-text py-4 border-b border-gray-300 animated-accordion"
+      >
+        <summary
+          class="cursor-pointer flex justify-between items-center text-20px font-poppins font-light animated-accordion-toggle text-[var(--color-primary)]"
+        >
+          Ingredients
+          <img
+            src="public/icons/+.svg"
+            alt="Plus icon"
+            class="animated-accordion-icon w-5 h-5"
+          />
+        </summary>
+        <div
+          class="animated-accordion-content max-h-0 overflow-hidden transition-all duration-500"
+        >
+          <p
+            class="mt-2 text-[14px] font-poppins font-light text-[var(--color-primary)]"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor
+            commodo ullamcorper a lacus vestibulum. Luctus accumsan tortor
+            posuere ac ut.
+          </p>
+        </div>
+      </details>
+      <details class="bg-background text-text py-4 animated-accordion">
+        <summary
+          class="cursor-pointer flex justify-between items-center text-20px font-poppins font-light animated-accordion-toggle text-[var(--color-primary)]"
+        >
+          Ingredients
+          <img
+            src="public/icons/+.svg"
+            alt="Plus icon"
+            class="animated-accordion-icon w-5 h-5"
+          />
+        </summary>
+        <div
+          class="animated-accordion-content max-h-0 overflow-hidden transition-all duration-500"
+        >
+          <p
+            class="mt-2 text-[14px] font-poppins font-light text-[var(--color-primary)]"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor
+            commodo ullamcorper a lacus vestibulum. Luctus accumsan tortor
+            posuere ac ut.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <section class="mt-16 px-6 pb-20 bg-background text-text relative">
+      <div class="w-full md:w-1/2 flex flex-col md:items-end">
+        <h3
+          class="mb-4 text-center md:text-right font-lato font-normal text-28px text-[color:var(--color-primary)] uppercase"
+        >
+          You may also like
+        </h3>
+      </div>
+
+      <div class="relative sm:px-12 overflow-hidden">
+        <button
+          class="prev-btn absolute left-0 top-[40%] -translate-y-1/2 z-10 hidden sm:flex transition-transform duration-200 hover:scale-125"
+          aria-label="Previous slide"
+          type="button"
+        >
+          <img
+            src="public/icons/chevron-left.svg"
+            alt="Previous"
+            class="w-[29px] h-[29px]"
+          />
+        </button>
+
+        <div class="relative flex flex-col items-center justify-center">
+          <div
+            class="carousel scrollbar-hide flex w-full snap-x snap-mandatory gap-8 sm:gap-16 overflow-x-scroll scroll-smooth"
+          >
+            <div
+              class="relative aspect-[3/4] w-[85%] shrink-0 snap-start snap-always md:w-[30%] md:aspect-[3/4] transition-transform duration-200 hover:scale-105"
+            >
+              <img
+                src="public/images/product-2.svg"
+                alt="Hand pomade product"
+                class="w-full h-full object-cover rounded mb-2 transition-transform duration-200 hover:scale-102"
+              />
+              <h4 class="font-lato font-normal text-16 md:text-18 uppercase">
+                Hand pomade / Pommade mains
+              </h4>
+              <h4 class="font-lato font-light text-16 uppercase pb-8">
+                Nourishment for your hands
+              </h4>
+              <p
+                class="font-lato font-normal text-16 md:text-18 text-button uppercase"
+              >
+                159,00 KR
+              </p>
+            </div>
+            <div
+              class="relative aspect-[3/4] w-[85%] shrink-0 snap-start snap-always md:w-[30%] md:aspect-[3/4] transition-transform duration-200 hover:scale-105"
+            >
+              <img
+                src="public/images/product-2.svg"
+                alt="Hand pomade product"
+                class="w-full h-full object-cover rounded mb-2 transition-transform duration-200 hover:scale-102"
+              />
+              <h4 class="font-lato font-normal text-16 md:text-18 uppercase">
+                Hand pomade / Pommade mains
+              </h4>
+              <h4 class="font-lato font-light text-16 uppercase pb-8">
+                Nourishment for your hands
+              </h4>
+              <p
+                class="font-lato font-normal text-16 md:text-18 text-button uppercase"
+              >
+                159,00 KR
+              </p>
+            </div>
+            <div
+              class="relative aspect-[3/4] w-[85%] shrink-0 snap-start snap-always md:w-[30%] md:aspect-[3/4] transition-transform duration-200 hover:scale-105"
+            >
+              <img
+                src="public/images/product-2.svg"
+                alt="Hand pomade product"
+                class="w-full h-full object-cover rounded mb-2 transition-transform duration-200 hover:scale-102"
+              />
+              <h4 class="font-lato font-normal text-16 md:text-18 uppercase">
+                Hand pomade / Pommade mains
+              </h4>
+              <h4 class="font-lato font-light text-16 uppercase pb-8">
+                Nourishment for your hands
+              </h4>
+              <p
+                class="font-lato font-normal text-16 md:text-18 text-button uppercase"
+              >
+                159,00 KR
+              </p>
+            </div>
+            <div
+              class="relative aspect-[3/4] w-[85%] shrink-0 snap-start snap-always md:w-[30%] md:aspect-[3/4] transition-transform duration-200 hover:scale-105"
+            >
+              <img
+                src="public/images/product-2.svg"
+                alt="Hand pomade product"
+                class="w-full h-full object-cover rounded mb-2 transition-transform duration-200 hover:scale-102"
+              />
+              <h4 class="font-lato font-normal text-16 md:text-18 uppercase">
+                Hand pomade / Pommade mains
+              </h4>
+              <h4 class="font-lato font-light text-16 uppercase pb-8">
+                Nourishment for your hands
+              </h4>
+              <p
+                class="font-lato font-normal text-16 md:text-18 text-button font-semibold uppercase"
+              >
+                159,00 KR
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="next-btn absolute right-0 top-[40%] -translate-y-1/2 z-10 p-3 hidden sm:flex transition-transform duration-200 hover:scale-125"
+          aria-label="Next slide"
+          type="button"
+        >
+          <img
+            src="public/icons/chevron-right.svg"
+            alt="Next"
+            class="w-[29px] h-[29px]"
+          />
+        </button>
+      </div>
+    </section>
+
+    <script src="src/script.js" type="module" defer></script>
+  </body>
 </html>

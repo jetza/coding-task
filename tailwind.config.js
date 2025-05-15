@@ -6,9 +6,9 @@ export default {
       fontFamily: {
         lato: ["Lato", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
-        sans: ["Lato", "Poppins", "sans-serif"],
       },
     },
   },
+  safelist: ["peer-checked:opacity-100"],
   plugins: [],
 };
