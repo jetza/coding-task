@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+
+# Build output
+*.log
+dist/
+.cache/
+.parcel-cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
+
+# Editor folders
+.vscode/
+.idea/
+
+# Output CSS (if generated)
+src/styles/output.css
+
+# Lock files (optional, if you want to ignore them)
+# package-lock.json
+yarn.lock
+pnpm-lock.yaml
