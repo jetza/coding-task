@@ -1,6 +1,6 @@
-# Cosmetic Products Webshop
+# Act+Acre
 
-This is a modern single-page webshop for cosmetic products, developed as a demo/project with a focus on beautiful and responsive design, animations, and simple cart logic.
+This is a modern webshop for cosmetic products, developed as a demo/project with a focus on beautiful and responsive design, animations, and simple cart logic.
 
 ## Technologies Used
 
@@ -44,10 +44,11 @@ This is recommended for a smoother development experience.
 
 ## Project Structure
 
-- `src/index.html` — Main page
+- `index.html` — Main page
 - `src/index.js` — All interactivity and logic
-- `src/styles/tailwind.css` — Tailwind CSS styles
-- `src/assets/` — Images and other resources (optional)
+- `src/output.css` — Tailwind CSS styles
+- `src/custom.css` — Tailwind CSS styles
+- `public/` — Images and other resources (optional)
 - `src/pages/` — Prepared pages for extension (blog, shop, user...)
 
 ## Note
