@@ -1,0 +1,44 @@
+{
+  "siteTitle": "Act+Acre",
+  "nav": {
+    "shop": "Shop",
+    "science": "Science",
+    "press": "Press",
+    "blog": "Blog",
+    "tutorial": "Tutorial"
+  },
+  "search": {
+    "openSearch": "Open search modal",
+    "searchAllProducts": "Search all products",
+    "placeholder": "Type to search...",
+    "submit": "Submit"
+  },
+  "user": {
+    "profile": "User profile"
+  },
+  "cart": {
+    "cart": "Cart",
+    "addToCart": "Add to cart",
+    "buyOnce": "Buy Once | $38",
+    "subscribe": "Subscribe (SAVE 20%) | $30"
+  },
+  "product": {
+    "restorativeHairMask": "Restorative hair mask",
+    "nourishmentInBottle": "Nourishment in a bottle",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor commodo ullamcorper a lacus vestibulum. Luctus accumsan tortor posuere ac ut.",
+    "organic": "100% ORGANIC"
+  },
+  "breadcrumbs": {
+    "allProducts": "ALL PRODUCTS / ",
+    "haircare": "HAIRCARE / "
+  },
+  "accordion": {
+    "ingredients": "Ingredients"
+  },
+  "carousel": {
+    "youMayAlsoLike": "You may also like",
+    "handPomade": "Hand pomade / Pommade mains",
+    "nourishmentForHands": "Nourishment for your hands",
+    "price": "159,00 KR"
+  }
+}

@@ -11,6 +11,31 @@
       rel="stylesheet"
       href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"
     />
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Act+Acre - Restorative hair mask and premium haircare products. Discover organic, nourishing solutions for your hair and skin."
+    />
+    <meta
+      name="keywords"
+      content="haircare, skincare, organic, restorative, mask, act+acre, beauty, wellness"
+    />
+    <meta name="author" content="Act+Acre" />
+    <meta property="og:title" content="Act+Acre - Restorative Hair Mask" />
+    <meta
+      property="og:description"
+      content="Nourishment in a bottle. Discover our restorative hair mask and other organic products."
+    />
+    <meta property="og:image" content="public/images/product-1.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://actacre.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Act+Acre - Restorative Hair Mask" />
+    <meta
+      name="twitter:description"
+      content="Nourishment in a bottle. Discover our restorative hair mask and other organic products."
+    />
+    <meta name="twitter:image" content="public/images/product-1.svg" />
   </head>
   <body>
     <header
@@ -18,61 +43,88 @@
     >
       <!-- Hamburger + Search mobile -->
       <div class="flex items-center gap-4 sm:hidden">
-        <button id="menu-btn" class="text-2xl text-text focus:outline-none">
-          <img src="/public/icons/menu.svg" alt="Menu" class="w-6 h-6" />
+        <button
+          id="menu-btn"
+          class="text-2xl text-text focus:outline-none"
+          aria-label="Open mobile menu"
+        >
+          <img alt="Menu" class="w-6 h-6" />
         </button>
-        <a href="#" aria-label="Search" class="text-2xl text-text">
-          <img src="public/icons/search.svg" alt="Search" class="w-6 h-6" />
+        <a
+          href="#"
+          aria-label="Open search modal"
+          id="search-btn-mobile"
+          class="text-2xl text-text"
+          role="button"
+          tabindex="0"
+        >
+          <img alt="Search" class="w-6 h-6" />
+          <span class="sr-only" data-i18n="search.openSearch"
+            >Open search modal</span
+          >
         </a>
       </div>
 
       <!-- Logo -->
-      <div class="hidden sm:flex flex-col">
+      <div class="hidden sm:flex flex-col" aria-label="Site logo">
         <a
           href="index.html"
           class="text-text text-center no-underline flex flex-col items-center justify-center leading-none"
         >
           <img
             src="public/images/logo.svg"
-            alt="Logo"
+            alt="Act+Acre logo"
             class="w-[62px] h-[49px]"
+            loading="lazy"
           />
         </a>
       </div>
       <a
         href="index.html"
         class="flex sm:hidden flex-col items-center justify-center text-text text-center no-underline flex-1 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 leading-none w-[62px] h-[49px]"
+        aria-label="Go to homepage"
       >
         <img
           src="public/images/logo-mobile.svg"
-          alt="Logo"
+          alt="Act+Acre logo"
           class="w-[62px] h-[49px]"
+          loading="lazy"
         />
       </a>
 
       <!-- Desktop nav -->
       <nav
         class="gap-4 text-text text-sm hidden sm:flex flex-1 justify-center items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+        aria-label="Main navigation"
       >
-        <a href="src/pages/shop/shop.html" class="hover:underline font-poppins"
+        <a
+          href="src/pages/shop/shop.html"
+          class="hover:underline font-poppins"
+          data-i18n="nav.shop"
           >Shop</a
         >
         <a
           href="src/pages/science/science.html"
           class="hover:underline font-poppins"
+          data-i18n="nav.science"
           >Science</a
         >
         <a
           href="src/pages/press/press.html"
           class="hover:underline font-poppins"
+          data-i18n="nav.press"
           >Press</a
         >
-        <a href="src/pages/blog/blog.html" class="hover:underline font-poppins"
+        <a
+          href="src/pages/blog/blog.html"
+          class="hover:underline font-poppins"
+          data-i18n="nav.blog"
           >Blog</a
         >
         <a
           href="src/pages/tutorial/tutorial.html"
           class="hover:underline font-poppins"
+          data-i18n="nav.tutorial"
           >Tutorial</a
         >
       </nav>
@@ -80,48 +132,120 @@
       <!-- Right icons desktop -->
       <div
         class="gap-4 text-text items-center flex-1 justify-end hidden sm:flex"
+        aria-label="Desktop quick actions"
       >
-        <a href="#" aria-label="Search">
+        <a
+          href="#"
+          aria-label="Open search modal"
+          id="search-btn-desktop"
+          role="button"
+          tabindex="0"
+        >
           <img
             src="public/icons/search.svg"
             alt="Search-icon"
             class="w-6 h-6 inline-block align-middle"
+            loading="lazy"
           />
         </a>
-        <a href="src/pages/user/user.html" aria-label="User">
+        <a href="src/pages/user/user.html" aria-label="User profile">
           <img
-            src="public/icons/user.svg"
             alt="User-icon"
             class="w-6 h-6 inline-block align-middle"
+            loading="lazy"
           />
+          <span class="sr-only" data-i18n="user.profile">User profile</span>
         </a>
-        <a href="src/pages/cart/cart.html" aria-label="Cart">
+        <a href="src/pages/cart/cart.html" aria-label="Cart" aria-live="polite">
           <img
             src="public/icons/cart.svg"
             alt="Cart-icon"
             class="w-6 h-6 inline-block align-middle"
+            loading="lazy"
           />
+          <span class="sr-only" data-i18n="cart.cart">Cart</span>
         </a>
       </div>
 
       <!-- Right icons mobile -->
       <div
         class="flex items-center gap-4 sm:hidden absolute right-4 top-1/2 -translate-y-1/2"
+        aria-label="Mobile quick actions"
       >
         <a
           href="src/pages/user/user.html"
-          aria-label="User"
+          aria-label="User profile"
           class="text-2xl text-text"
         >
-          <img src="public/icons/user.svg" alt="User" class="w-6 h-6" />
+          <img
+            src="public/icons/user.svg"
+            alt="User icon"
+            class="w-6 h-6"
+            loading="lazy"
+          />
         </a>
         <a
           href="src/pages/cart/cart.html"
-          aria-label="Cart-mobile"
+          aria-label="Cart"
           class="text-2xl text-text relative"
+          aria-live="polite"
         >
-          <img src="public/icons/cart.svg" alt="Cart-icon" class="w-6 h-6" />
+          <img
+            src="public/icons/cart.svg"
+            alt="Cart-icon"
+            class="w-6 h-6"
+            loading="lazy"
+          />
         </a>
+      </div>
+
+      <!-- Search Modal -->
+      <div
+        id="search-modal"
+        class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center hidden"
+      >
+        <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md relative">
+          <button
+            id="close-search-modal"
+            class="absolute top-4 right-4 text-2xl text-gray-400 hover:text-black focus:outline-none"
+            aria-label="Close search modal"
+          >
+            &times;
+          </button>
+          <form
+            class="flex flex-col gap-4"
+            role="search"
+            aria-label="Site search"
+            aria-describedby="search-desc"
+          >
+            <span id="search-desc" class="sr-only"
+              >Type your search and press submit to find products.</span
+            >
+            <label
+              for="search-input"
+              class="font-poppins font-medium text-lg"
+              data-i18n="search.searchAllProducts"
+              >Search all products</label
+            >
+            <input
+              id="search-input"
+              type="text"
+              class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+              placeholder="Type to search..."
+              autocomplete="off"
+              aria-required="true"
+              data-i18n="search.placeholder"
+            />
+            <button
+              type="submit"
+              class="bg-[var(--color-primary)] text-white rounded px-4 py-2 font-poppins font-medium hover:bg-[var(--color-secondary)] transition"
+              aria-label="Submit search"
+              data-i18n="search.submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
 
       <!-- Mobile nav -->
@@ -148,21 +272,34 @@
       class="flex flex-col md:flex-row md:pr-6 bg-[var(--color-background-light)] md:bg-transparent"
     >
       <!-- Breadcrumbs mobile -->
-      <p
+      <nav
+        aria-label="breadcrumb"
         class="uppercase text-sm md:my-4 md:hidden bg-[var(--color-background-light)] py-2 px-6 flex items-center"
       >
-        <img
-          src="public/icons/arrow.svg"
-          alt="Menu"
-          class="mr-2 inline-block w-4 h-4"
-        />
-        <span class="font-poppins font-light text-10px text-gray">
-          ALL PRODUCTS / HAIRCARE /&nbsp;
-        </span>
-        <span class="font-poppins font-normal text-10px">
-          RESTORATIVE HAIR MASK</span
-        >
-      </p>
+        <ol class="flex items-center">
+          <li class="flex items-center">
+            <img alt="Arrow" class="mr-2 inline-block w-4 h-4" loading="lazy" />
+          </li>
+          <li
+            class="font-poppins font-light text-10px text-gray"
+            data-i18n="breadcrumbs.allProducts"
+          >
+            ALL PRODUCTS /
+          </li>
+          <li
+            class="font-poppins font-light text-10px text-gray"
+            data-i18n="breadcrumbs.haircare"
+          >
+            HAIRCARE /
+          </li>
+          <li
+            class="font-poppins font-normal text-10px"
+            data-i18n="product.restorativeHairMask"
+          >
+            RESTORATIVE HAIR MASK
+          </li>
+        </ol>
+      </nav>
       <!-- Image -->
       <div
         class="w-full md:w-3/5 aspect-square md:aspect-auto h-auto bg-var[--light-gray]"
@@ -171,93 +308,133 @@
           src="public/images/product-1.svg"
           alt="restorative hair mask"
           class="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       <!-- Details -->
       <div class="w-full md:w-2/5 flex flex-col gap-6 p-6 text-text">
         <!-- Breadcrumbs desktop -->
-        <p class="uppercase font-poppins font-light text-11px hidden md:block">
-          all products / skincare / restorative hair mask
-        </p>
-        <h2 class="font-poppins font-normal text-28px uppercase">
+        <nav
+          aria-label="breadcrumb"
+          class="uppercase font-poppins font-light text-11px hidden md:block"
+        >
+          <ol class="flex items-center">
+            <li
+              class="font-poppins font-light text-10px text-gray"
+              data-i18n="breadcrumbs.allProducts"
+            >
+              ALL PRODUCTS /
+            </li>
+            <li
+              class="font-poppins font-light text-10px text-gray"
+              data-i18n="breadcrumbs.haircare"
+            >
+              HAIRCARE /
+            </li>
+            <li
+              class="font-poppins font-normal"
+              data-i18n="product.restorativeHairMask"
+            >
+              RESTORATIVE HAIR MASK
+            </li>
+          </ol>
+        </nav>
+        <h2
+          class="font-poppins font-normal text-28px uppercase"
+          data-i18n="product.restorativeHairMask"
+        >
           Restorative hair mask
         </h2>
-        <p class="font-poppins font-light text-14px uppercase">
+        <p
+          class="font-poppins font-light text-14px uppercase"
+          data-i18n="product.nourishmentInBottle"
+        >
           Nourishment in a bottle
         </p>
         <hr class="border-t-2 border-[var(--color-secondary)] my-4" />
         <div>
-          <p class="font-poppins font-light text-14px">
+          <p
+            class="font-poppins font-light text-14px"
+            data-i18n="product.description"
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor
             commodo ullamcorper a lacus vestibulum. Luctus accumsan tortor
             posuere ac ut.
           </p>
         </div>
-        <div
+        <!-- Organic Benefits (semantic HTML, all classes preserved) -->
+        <section
+          aria-label="Product benefits"
           class="grid grid-cols-2 gap-4 mb-2 w-full sm:gap-4 gap-x-20 gap-y-10"
         >
-          <div class="flex items-center gap-2">
-            <div
-              class="w-[52px] h-[52px] rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center"
-            >
-              <img
-                src="public/icons/organic.svg"
-                alt="Organic icon"
-                class="w-full h-full object-contain"
-              />
-            </div>
-            <span
-              class="text-xs font-poppins font-medium uppercase text-14px text-accent"
-              >100% ORGANIC</span
-            >
-          </div>
-          <div class="flex items-center gap-2">
-            <div
-              class="w-[52px] h-[52px] rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center"
-            >
-              <img
-                src="public/icons/organic.svg"
-                alt="Organic icon"
-                class="w-full h-full object-contain"
-              />
-            </div>
-            <span
-              class="text-xs font-poppins font-medium uppercase text-14px text-accent"
-              >100% ORGANIC</span
-            >
-          </div>
-          <div class="flex items-center gap-2">
-            <div
-              class="w-[52px] h-[52px] rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center"
-            >
-              <img
-                src="public/icons/organic.svg"
-                alt="Organic icon"
-                class="w-full h-full object-contain"
-              />
-            </div>
-            <span
-              class="text-xs font-poppins font-medium uppercase text-14px text-accent"
-              >100% ORGANIC</span
-            >
-          </div>
-          <div class="flex items-center gap-2">
-            <div
-              class="w-[52px] h-[52px] rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center"
-            >
-              <img
-                src="public/icons/organic.svg"
-                alt="Organic icon"
-                class="w-full h-full object-contain"
-              />
-            </div>
-            <span
-              class="text-xs font-poppins font-medium uppercase text-14px text-accent"
-              >100% ORGANIC</span
-            >
-          </div>
-        </div>
+          <ul class="contents">
+            <li class="flex items-center gap-2">
+              <figure
+                class="w-[52px] h-[52px] rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center m-0"
+              >
+                <img
+                  alt="Organic icon"
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </figure>
+              <span
+                class="text-xs font-poppins font-medium uppercase text-14px text-accent"
+                data-i18n="product.organic"
+                >100% ORGANIC</span
+              >
+            </li>
+            <li class="flex items-center gap-2">
+              <figure
+                class="w-[52px] h-[52px] rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center m-0"
+              >
+                <img
+                  alt="Organic icon"
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </figure>
+              <span
+                class="text-xs font-poppins font-medium uppercase text-14px text-accent"
+                data-i18n="product.organic"
+                >100% ORGANIC</span
+              >
+            </li>
+            <li class="flex items-center gap-2">
+              <figure
+                class="w-[52px] h-[52px] rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center m-0"
+              >
+                <img
+                  alt="Organic icon"
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </figure>
+              <span
+                class="text-xs font-poppins font-medium uppercase text-14px text-accent"
+                data-i18n="product.organic"
+                >100% ORGANIC</span
+              >
+            </li>
+            <li class="flex items-center gap-2">
+              <figure
+                class="w-[52px] h-[52px] rounded-full bg-[var(--color-background-light)] md:bg-white flex items-center justify-center m-0"
+              >
+                <img
+                  alt="Organic icon"
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                />
+              </figure>
+              <span
+                class="text-xs font-poppins font-medium uppercase text-14px text-accent"
+                data-i18n="product.organic"
+                >100% ORGANIC</span
+              >
+            </li>
+          </ul>
+        </section>
         <hr class="border-t-2 border-[var(--color-secondary)] my-4" />
         <div class="flex flex-col space-y-4">
           <label class="flex items-center space-x-2">
@@ -271,6 +448,7 @@
             />
             <span
               class="font-poppins font-light text-16px opacity-50 peer-checked:opacity-100"
+              data-i18n="cart.buyOnce"
             >
               Buy Once | $38
             </span>
@@ -285,6 +463,7 @@
             />
             <span
               class="font-poppins font-light text-16px opacity-50 peer-checked:opacity-100"
+              data-i18n="cart.subscribe"
             >
               Subscribe (SAVE 20%) |
               <span class="text-red-600 sm:text-inherit">$30</span>
@@ -294,13 +473,14 @@
 
         <div class="flex items-center gap-6 justify-between">
           <div
-            class="flex justify-between items-center border border-black py-2 bg-white basis-1/3 min-w-0"
+            class="flex justify-between items-center border border-black py-3 bg-white basis-1/3 min-w-0"
           >
             <button
               id="decrease"
-              class="text-xl px-2 py-1 font-bold text-black hover:text-bold"
+              class="text-xl px-2 py-1 font-bold text-black hover:text-bold flex items-center justify-center"
+              aria-label="Decrease quantity"
             >
-              -
+              <img alt="Minus" class="w-3 h-3" loading="lazy" />
             </button>
             <span
               id="count"
@@ -309,19 +489,22 @@
             >
             <button
               id="increase"
-              class="text-xl px-2 py-1 font-bold text-black hover:text-bold"
+              class="text-xl px-2 py-1 font-bold text-black hover:text-bold flex items-center justify-center"
+              aria-label="Increase quantity"
             >
-              +
+              <img alt="Plus" class="w-3 h-3" loading="lazy" />
             </button>
           </div>
           <button
             type="button"
             id="cart-animated-btn"
             class="group relative bg-[var(--color-light-accent)] px-6 py-4 w-fit uppercase basis-2/3 overflow-hidden transition-all duration-200 focus:outline-none hover:scale-106 hover:bg-[#575757] font-lato text-[16px] font-normal text-[var(--color-primary)]"
+            aria-label="Add to cart"
           >
             <span
               id="cart-btn-text"
               class="transition-opacity duration-200 font-lato text-[16px] font-normal group-hover:text-white"
+              data-i18n="cart.addToCart"
             >
               Add to cart
             </span>
@@ -345,11 +528,19 @@
         <summary
           class="cursor-pointer flex justify-between items-center text-20px font-poppins font-light animated-accordion-toggle text-[var(--color-primary)]"
         >
-          Ingredients
+          <span data-i18n="accordion.ingredients">Ingredients</span>
           <img
-            src="public/icons/+.svg"
+            src="public/icons/plus.svg"
             alt="Plus icon"
-            class="animated-accordion-icon w-5 h-5"
+            class="animated-accordion-icon icon-plus w-5 h-5"
+            style="display: inline-block"
+            loading="lazy"
+          />
+          <img
+            alt="Minus icon"
+            class="animated-accordion-icon icon-minus w-5 h-5"
+            style="display: none"
+            loading="lazy"
           />
         </summary>
         <div
@@ -371,11 +562,18 @@
         <summary
           class="cursor-pointer flex justify-between items-center text-20px font-poppins font-light animated-accordion-toggle text-[var(--color-primary)]"
         >
-          Ingredients
+          <span data-i18n="accordion.ingredients">Ingredients</span>
           <img
-            src="public/icons/+.svg"
             alt="Plus icon"
-            class="animated-accordion-icon w-5 h-5"
+            class="animated-accordion-icon icon-plus w-5 h-5"
+            style="display: inline-block"
+            loading="lazy"
+          />
+          <img
+            alt="Minus icon"
+            class="animated-accordion-icon icon-minus w-5 h-5"
+            style="display: none"
+            loading="lazy"
           />
         </summary>
         <div
@@ -395,11 +593,18 @@
         <summary
           class="cursor-pointer flex justify-between items-center text-20px font-poppins font-light animated-accordion-toggle text-[var(--color-primary)]"
         >
-          Ingredients
+          <span data-i18n="accordion.ingredients">Ingredients</span>
           <img
-            src="public/icons/+.svg"
             alt="Plus icon"
-            class="animated-accordion-icon w-5 h-5"
+            class="animated-accordion-icon icon-plus w-5 h-5"
+            style="display: inline-block"
+            loading="lazy"
+          />
+          <img
+            alt="Minus icon"
+            class="animated-accordion-icon icon-minus w-5 h-5"
+            style="display: none"
+            loading="lazy"
           />
         </summary>
         <div
@@ -421,6 +626,7 @@
       <div class="w-full md:w-1/2 flex flex-col md:items-end">
         <h3
           class="mb-4 text-center md:text-right font-lato font-normal text-28px text-[color:var(--color-primary)] uppercase"
+          data-i18n="carousel.youMayAlsoLike"
         >
           You may also like
         </h3>
@@ -431,12 +637,9 @@
           class="prev-btn absolute left-0 top-[40%] -translate-y-1/2 z-10 hidden sm:flex transition-transform duration-200 hover:scale-125"
           aria-label="Previous slide"
           type="button"
+          tabindex="0"
         >
-          <img
-            src="public/icons/chevron-left.svg"
-            alt="Previous"
-            class="w-[29px] h-[29px]"
-          />
+          <img alt="Previous" class="w-[29px] h-[29px]" loading="lazy" />
         </button>
 
         <div class="relative flex flex-col items-center justify-center">
@@ -451,16 +654,24 @@
                   src="public/images/product-2.svg"
                   alt="Hand pomade product"
                   class="w-full h-full object-cover rounded mb-2 transition-transform duration-200 hover:scale-105"
+                  loading="lazy"
                 />
               </div>
-              <h4 class="font-lato font-normal text-16 md:text-18 uppercase">
+              <h4
+                class="font-lato font-normal text-16 md:text-18 uppercase"
+                data-i18n="carousel.handPomade"
+              >
                 Hand pomade / Pommade mains
               </h4>
-              <h4 class="font-lato font-light text-16 uppercase pb-8">
+              <h4
+                class="font-lato font-light text-16 uppercase pb-8"
+                data-i18n="carousel.nourishmentForHands"
+              >
                 Nourishment for your hands
               </h4>
               <p
                 class="font-lato font-normal text-16 md:text-18 text-button uppercase"
+                data-i18n="carousel.price"
               >
                 159,00 KR
               </p>
@@ -473,16 +684,24 @@
                   src="public/images/product-2.svg"
                   alt="Hand pomade product"
                   class="w-full h-full object-cover rounded mb-2 transition-transform duration-200 hover:scale-105"
+                  loading="lazy"
                 />
               </div>
-              <h4 class="font-lato font-normal text-16 md:text-18 uppercase">
+              <h4
+                class="font-lato font-normal text-16 md:text-18 uppercase"
+                data-i18n="carousel.handPomade"
+              >
                 Hand pomade / Pommade mains
               </h4>
-              <h4 class="font-lato font-light text-16 uppercase pb-8">
+              <h4
+                class="font-lato font-light text-16 uppercase pb-8"
+                data-i18n="carousel.nourishmentForHands"
+              >
                 Nourishment for your hands
               </h4>
               <p
                 class="font-lato font-normal text-16 md:text-18 text-button uppercase"
+                data-i18n="carousel.price"
               >
                 159,00 KR
               </p>
@@ -495,16 +714,24 @@
                   src="public/images/product-2.svg"
                   alt="Hand pomade product"
                   class="w-full h-full object-cover rounded mb-2 transition-transform duration-200 hover:scale-105"
+                  loading="lazy"
                 />
               </div>
-              <h4 class="font-lato font-normal text-16 md:text-18 uppercase">
+              <h4
+                class="font-lato font-normal text-16 md:text-18 uppercase"
+                data-i18n="carousel.handPomade"
+              >
                 Hand pomade / Pommade mains
               </h4>
-              <h4 class="font-lato font-light text-16 uppercase pb-8">
+              <h4
+                class="font-lato font-light text-16 uppercase pb-8"
+                data-i18n="carousel.nourishmentForHands"
+              >
                 Nourishment for your hands
               </h4>
               <p
                 class="font-lato font-normal text-16 md:text-18 text-button uppercase"
+                data-i18n="carousel.price"
               >
                 159,00 KR
               </p>
@@ -517,16 +744,24 @@
                   src="public/images/product-2.svg"
                   alt="Hand pomade product"
                   class="w-full h-full object-cover rounded mb-2 transition-transform duration-200 hover:scale-105"
+                  loading="lazy"
                 />
               </div>
-              <h4 class="font-lato font-normal text-16 md:text-18 uppercase">
+              <h4
+                class="font-lato font-normal text-16 md:text-18 uppercase"
+                data-i18n="carousel.handPomade"
+              >
                 Hand pomade / Pommade mains
               </h4>
-              <h4 class="font-lato font-light text-16 uppercase pb-8">
+              <h4
+                class="font-lato font-light text-16 uppercase pb-8"
+                data-i18n="carousel.nourishmentForHands"
+              >
                 Nourishment for your hands
               </h4>
               <p
-                class="font-lato font-normal text-16 md:text-18 text-button font-semibold uppercase"
+                class="font-lato font-normal text-16 md:text-18 text-button uppercase"
+                data-i18n="carousel.price"
               >
                 159,00 KR
               </p>
@@ -538,16 +773,17 @@
           class="next-btn absolute right-0 top-[40%] -translate-y-1/2 z-10 p-3 hidden sm:flex transition-transform duration-200 hover:scale-125"
           aria-label="Next slide"
           type="button"
+          tabindex="0"
         >
-          <img
-            src="public/icons/chevron-right.svg"
-            alt="Next"
-            class="w-[29px] h-[29px]"
-          />
+          <img alt="Next" class="w-[29px] h-[29px]" loading="lazy" />
         </button>
       </div>
     </section>
+    <script src="https://unpkg.com/i18next@21.6.14/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.4.3/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.2/i18nextBrowserLanguageDetector.min.js"></script>
 
     <script src="src/script.js" type="module" defer></script>
+    <script src="src/i18next.js" type="module" defer></script>
   </body>
 </html>
